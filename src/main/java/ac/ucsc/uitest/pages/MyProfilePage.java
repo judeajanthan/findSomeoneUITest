@@ -1,4 +1,4 @@
-package pages;
+package ac.ucsc.pages;
 
 import org.openqa.selenium.By;
 
