@@ -1,0 +1,10 @@
+[
+  {
+    "searchTerm": "Plumbing",
+    "expectedCategory": "Professional"
+  },
+  {
+    "searchTerm": "Study Buddy",
+    "expectedCategory": "Friend"
+  }
+]

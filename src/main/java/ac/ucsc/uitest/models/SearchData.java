@@ -10,7 +10,15 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class SearchModel {
+public class SearchData {
     private String searchTerm;
     private String expectedCategory;
+
+    @Override
+    public String toString() {
+        return "SearchData{" +
+                "searchTerm='" + searchTerm + '\'' +
+                ", expectedCategory='" + expectedCategory + '\'' +
+                '}';
+    }
 }
