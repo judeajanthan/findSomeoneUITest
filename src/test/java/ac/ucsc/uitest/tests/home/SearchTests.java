@@ -6,11 +6,11 @@ import org.testng.annotations.Test;
 
 /**
  * @author aerok
- * @created 15/03/2026
+ * @code @created  15/03/2026
  */
 public class SearchTests extends BaseTest {
 
-    @Test(dataProvider = "searchData", dataProviderClass = SearchDataProvider.class)
+    @Test(description = "TC-001", dataProvider = "searchData", dataProviderClass = SearchDataProvider.class)
     public void validateUserSearch(SearchData testData) {
         // testData.getTerm() provides "Plumbing", "Math Tutor", etc.
        // homePage.searchFor(testData.getTerm());
