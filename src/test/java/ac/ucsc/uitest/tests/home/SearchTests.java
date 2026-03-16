@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
  */
 public class SearchTests extends BaseTest {
 
-    @Test(description = "TC-001", dataProvider = "searchProvider", dataProviderClass = SearchDataProvider.class)
+    @Test(description = "TC-001", dataProvider = "searchData", dataProviderClass = SearchDataProvider.class)
     public void validateUserSearch(SearchData testData) {
         // testData.getTerm() provides "Plumbing", "Math Tutor", etc.
        // homePage.searchFor(testData.getTerm());
