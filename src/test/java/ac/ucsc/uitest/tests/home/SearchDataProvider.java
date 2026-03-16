@@ -1,4 +1,4 @@
-package ac.ucsc.uitest.dataproviders;
+package ac.ucsc.uitest.tests.home;
 
 import ac.ucsc.uitest.models.SearchData;
 import ac.ucsc.uitest.utils.BaseReader;

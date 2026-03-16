@@ -1,7 +1,6 @@
 package ac.ucsc.uitest.tests.home;
 
 import ac.ucsc.uitest.base.BaseTest;
-import ac.ucsc.uitest.dataproviders.SearchDataProvider;
 import ac.ucsc.uitest.models.SearchData;
 import org.testng.annotations.Test;
 
