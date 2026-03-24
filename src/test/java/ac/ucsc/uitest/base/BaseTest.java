@@ -1,6 +1,7 @@
 package ac.ucsc.uitest.base;
 
 import ac.ucsc.uitest.pages.BasePage;
+import ac.ucsc.uitest.utils.BrowserFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -11,7 +12,8 @@ import org.testng.annotations.BeforeMethod;
 /**
  * @author aerok
  * {@code @created} 15/03/2026
- */public class BaseTest {
+ */
+public class BaseTest {
 
     protected WebDriver driver;
     protected BasePage basePage;
@@ -28,3 +30,22 @@ import org.testng.annotations.BeforeMethod;
         driver.quit();
     }
 }
+
+//public class BaseTest {
+//
+//    protected WebDriver driver;
+//    protected BasePage basePage;
+//
+//    @BeforeClass
+//    public void setupBrowser() {
+//        driver = BrowserFactory.getBROWSER_FACTORY().getDriver();
+//        basePage = new BasePage(driver);
+//    }
+//
+//    @AfterClass
+//    public void quitBrowser() {
+//        if (driver != null) {
+//            driver.quit();
+//        }
+//    }
+//}
