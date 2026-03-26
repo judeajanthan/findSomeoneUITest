@@ -1,9 +1,10 @@
-package ac.ucsc.uitest.base;
+package ac.ucsc.uitest.tests.home;
 
+import ac.ucsc.uitest.base.BaseTest;
 import ac.ucsc.uitest.pages.HomePage;
 import org.testng.annotations.Test;
 
-public class HomeTest extends BaseTest{
+public class HomeTest extends BaseTest {
 
     @Test
     public void clickFindBtn() {

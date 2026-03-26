@@ -3,7 +3,7 @@
     <suite name="All Test Suite" thread-count="2" parallel="classes">
          <test verbose="2"  preserve-order="false" name="C:/Users/judea/OneDrive/Desktop/findSomeoneUITest">
              <classes>
-                 <class name="ac.ucsc.uitest.base.HomeTest">
+                 <class name="ac.ucsc.uitest.tests.home.HomeTest">
                      <methods>
                          <include name="clickFindBtn"/>
                          <include name="clickBrowseProfessionalsBtn"/>

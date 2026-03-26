@@ -19,14 +19,14 @@ import org.openqa.selenium.WebDriver;
     }
 
     public void clickFindButton() {
-        driver.findElement(FIND_BUTTON).click();
+       click(FIND_BUTTON);
     }
 
     public void clickBrowseProfessionalsButton() {
-        driver.findElement(BROWSE_PROFESSIONALS_BUTTON).click();
+        click(BROWSE_PROFESSIONALS_BUTTON);
     }
 
     public void clickBrowseFriendsButton() {
-        driver.findElement(BROWSE_FRIENDS_BUTTON).click();
+       click(BROWSE_FRIENDS_BUTTON);
     }
 }

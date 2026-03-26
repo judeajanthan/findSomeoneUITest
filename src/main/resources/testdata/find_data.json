@@ -1,0 +1,35 @@
+[
+  {
+    "locationInput": "Colombo"
+  },
+  {
+    "locationInput": "Kandy"
+  },
+  {
+    "mainCategorySelect": "Any"
+  },
+  {
+    "mainCategorySelect": "Auto & Transport"
+  },
+  {
+    "mainCategorySelect": "Design"
+  },
+  {
+    "mainCategorySelect": "Education"
+  },
+  {
+    "mainCategorySelect": "Events & Personal Services"
+  },
+  {
+    "mainCategorySelect": "Friend"
+  },
+  {
+    "mainCategorySelect": "Health & Wellness"
+  },
+  {
+    "mainCategorySelect": "Home & Office Services"
+  },
+  {
+    "mainCategorySelect": "IT & Digital"
+  }
+]

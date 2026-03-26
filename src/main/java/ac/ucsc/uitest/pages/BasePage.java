@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -62,5 +63,11 @@ public class BasePage {
         locatorWaiting(locator);
         clear(locator);
         driver.findElement(locator).sendKeys(text);
+    }
+
+    public void Selector(By locator, String text) {
+        locatorWaiting(By.xpath("//option[text()='" + text + "']"));
+        Select select = new Select(driver.findElement(locator));
+        select.selectByVisibleText(text.trim());
     }
 }
