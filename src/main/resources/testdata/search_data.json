@@ -1,10 +1,80 @@
 [
   {
+    "_comment": "Verify search functionality with valid input",
+    "searchTerm": "Plumber in Colombo",
+    "expectedCategory": "Professional"
+  },
+  {
+    "_comment": "Verify search functionality with valid input",
+    "searchTerm": "Plumber",
+    "expectedCategory": "Friend"
+  },
+  {
+    "_comment": "Verify search functionality with valid input",
     "searchTerm": "Plumbing",
     "expectedCategory": "Professional"
   },
   {
-    "searchTerm": "Study Buddy",
+    "_comment": "Verify search functionality with valid input",
+    "searchTerm": "Home & Office Services",
     "expectedCategory": "Friend"
+  },
+  {
+    "_comment": "Verify search functionality with valid input",
+    "searchTerm": "Auto & Transport",
+    "expectedCategory": "Professional"
+  },
+  {
+    "_comment": "Verify search functionality with partially valid input ",
+    "searchTerm": "Plumber in ABC123",
+    "expectedCategory": "Friend"
+  },
+  {
+    "_comment": "Verify search functionality with partially valid input ",
+    "searchTerm": "Plumber in Matugama",
+    "expectedCategory": "Friend"
+  },
+  {
+    "_comment": "Verify search functionality with partially valid input ",
+    "searchTerm": "Plumbinggggggggggg",
+    "expectedCategory": "Friend"
+  },
+  {
+    "_comment": "Verify search functionality with partially valid input ",
+    "searchTerm": "Plumbing$!@#$%%",
+    "expectedCategory": "Friend"
+  },
+  {
+    "_comment": "Verify search functionality with partially valid input ",
+    "searchTerm": "Plumber in col",
+    "expectedCategory": "Friend"
+  },
+  {
+    "_comment": "Verify search functionality with invalid input ",
+    "searchTerm": "xyz123"
+  },
+  {
+    "_comment": "Verify search functionality with invalid input ",
+    "searchTerm": "plumbbing"
+  },
+  {
+    "_comment": "Verify search functionality with invalid input ",
+    "searchTerm": "pplumbing"
+  },
+  {
+    "_comment": "Verify search functionality with invalid input ",
+    "searchTerm": "xyz123"
+  },
+  {
+    "_comment": "Verify search functionality with invalid input ",
+    "searchTerm": "@#$$%$%%^**"
+  },
+  {
+    "_comment": "Verify search functionality with invalid input ",
+    "searchTerm": "********************"
+  },
+  {
+    "_comment": "Verify search functionality with empty input ",
+    "searchTerm": ""
   }
 ]

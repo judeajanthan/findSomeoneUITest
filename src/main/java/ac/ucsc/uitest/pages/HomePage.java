@@ -14,6 +14,8 @@ import org.openqa.selenium.WebDriver;
 
     private static final By BROWSE_FRIENDS_BUTTON = By.xpath("//a[@aria-label='Browse friends']");
 
+    private static final By CREATE_ACCOUNT_BUTTON = By.xpath("//a[text()='Create account']");
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
