@@ -74,7 +74,63 @@
     "searchTerm": "********************"
   },
   {
-    "_comment": "Verify search functionality with empty input ",
-    "searchTerm": ""
+    "_comment": "Verify search functionality with camel case match ",
+    "searchTerm": "PLUmber in COLOMbo"
+  },
+  {
+    "_comment": "Verify search functionality with camel case match ",
+    "searchTerm": "PLUMBING"
+  },
+  {
+    "_comment": "Verify search functionality with camel case match ",
+    "searchTerm": "Plumber in colombo"
+  },
+  {
+    "_comment": "Verify search functionality with  special characters match ",
+    "searchTerm": "Plumber $%#@#@#! in Colombo"
+  },
+  {
+    "_comment": "Verify search functionality with partial match text search ",
+    "searchTerm": "plumb"
+  },
+  {
+    "_comment": "Verify search functionality with partial match text search ",
+    "searchTerm": "Office"
+  },
+  {
+    "_comment": "Verify search functionality with partial match text search ",
+    "searchTerm": "Transport"
+  },
+  {
+    "_comment": "Verify search functionality with partial match text search ",
+    "searchTerm": "Tutor"
+  },
+  {
+    "_comment": "Verify search functionality with partial match text search ",
+    "searchTerm": "Buddy"
+  },
+  {
+    "_comment": "Verify search functionality with non english text search ",
+    "searchTerm": "智商测试即将开始!"
+  },
+  {
+    "_comment": "Verify wild card filters functionality on search",
+    "searchTerm": "Plumb*"
+  },
+  {
+    "_comment": "Verify wild card filters functionality on search",
+    "searchTerm": "*Tutor"
+  },
+  {
+    "_comment": "Verify wild card filters functionality on search",
+    "searchTerm": "*wellness*"
+  },
+  {
+    "_comment": "Verify wild card filters functionality on search",
+    "searchTerm": "health*"
+  },
+  {
+    "_comment": "Verify wild card filters functionality on search",
+    "searchTerm": "*health?"
   }
 ]
