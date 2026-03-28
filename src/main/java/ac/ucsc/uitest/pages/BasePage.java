@@ -55,6 +55,11 @@ public class BasePage {
         driver.findElement(locator).click();
     }
 
+    public <T> T clickAndReturn(By locator, Class<T> returnPageType) {
+        click(locator);
+        return PageFactory.initElements(driver, returnPageType);
+    }
+
     public void mouseHover(By locator) {
         new Actions(driver).moveToElement(driver.findElement(locator));
     }
