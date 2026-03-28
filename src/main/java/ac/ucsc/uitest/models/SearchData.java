@@ -5,7 +5,7 @@ import lombok.Setter;
 
 /**
  * @author aerok
- * @created 15/03/2026
+ * {@code @created} 15/03/2026
  */
 
 @Setter
