@@ -1,10 +1,28 @@
 [
   {
-    "searchTerm": "Plumbing",
-    "expectedCategory": "Professional"
+    "testId": "TC-001",
+    "testData": [
+      {
+        "searchTerm": "Plumbing",
+        "expectedCategory": "Professional"
+      },
+      {
+        "searchTerm": "Study Buddy",
+        "expectedCategory": "Friend"
+      }
+    ]
   },
   {
-    "searchTerm": "Study Buddy",
-    "expectedCategory": "Friend"
+    "testId": "TC-002",
+    "testData": [
+      {
+        "searchTermYT": "Plumbing",
+        "expectedCategoryYT": "Professional"
+      },
+      {
+        "searchTermYT": "Study Buddy",
+        "expectedCategoryYT": "Friend"
+      }
+    ]
   }
 ]

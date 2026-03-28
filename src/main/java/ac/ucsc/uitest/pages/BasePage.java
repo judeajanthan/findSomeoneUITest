@@ -1,5 +1,6 @@
 package ac.ucsc.uitest.pages;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -22,6 +23,15 @@ public class BasePage {
     private final String baseURL = "https://test.ineedtofindsomeonefor.com";
 
     protected WebDriver driver;
+    protected BasePage basePage;
+
+
+    public void setupBrowser() {
+        driver = WebDriverManager.chromedriver().create();
+        driver.manage().window().maximize();
+        basePage = PageFactory.initElements(driver, BasePage.class);
+    }
+
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -65,7 +75,7 @@ public class BasePage {
         driver.findElement(locator).sendKeys(text);
     }
 
-    public void Selector(By locator, String text) {
+    public void selector(By locator, String text) {
         locatorWaiting(By.xpath("//option[text()='" + text + "']"));
         Select select = new Select(driver.findElement(locator));
         select.selectByVisibleText(text.trim());

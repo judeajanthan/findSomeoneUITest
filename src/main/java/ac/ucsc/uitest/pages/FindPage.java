@@ -69,12 +69,12 @@ public class FindPage extends BasePage {
     }
 
     public void selectMainCategory(String visibleText) {
-        Selector(MAIN_CATEGORY_SELECTOR, visibleText);
+        selector(MAIN_CATEGORY_SELECTOR, visibleText);
         this.mainCategorySelectorVisibleText = visibleText;
     }
 
     public void selectSubCategory(String visibleText) {
-        Selector(SUB_CATEGORY_SELECTOR, visibleText);
+        selector(SUB_CATEGORY_SELECTOR, visibleText);
         this.subCategorySelectorVisibleText = visibleText;
     }
 
@@ -111,7 +111,7 @@ public class FindPage extends BasePage {
     }
 
     public void clickPreferredCurrencySelector(String visibleText) {
-        Selector(PREFERRED_CURRENCY_SELECTOR, visibleText);
+        selector(PREFERRED_CURRENCY_SELECTOR, visibleText);
         this.preferredCurrencySelectorVisibleText = visibleText;
     }
 
@@ -124,7 +124,7 @@ public class FindPage extends BasePage {
     }
 
     public void clickPurposeSelector(String visibleText) {
-        Selector(PURPOSE_SELECTOR, visibleText);
+        selector(PURPOSE_SELECTOR, visibleText);
         this.purposeSelectorVisibleText = visibleText;
     }
 
