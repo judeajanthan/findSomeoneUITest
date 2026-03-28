@@ -1,53 +1,43 @@
 [
   {
     "_comment": "Verify search functionality with valid input",
-    "searchTerm": "Plumber in Colombo",
-    "expectedCategory": "Professional"
+    "searchTerm": "Plumber in Colombo"
   },
   {
     "_comment": "Verify search functionality with valid input",
-    "searchTerm": "Plumber",
-    "expectedCategory": "Friend"
+    "searchTerm": "Plumber"
   },
   {
     "_comment": "Verify search functionality with valid input",
-    "searchTerm": "Plumbing",
-    "expectedCategory": "Professional"
+    "searchTerm": "Plumbing"
   },
   {
     "_comment": "Verify search functionality with valid input",
-    "searchTerm": "Home & Office Services",
-    "expectedCategory": "Friend"
+    "searchTerm": "Home & Office Services"
   },
   {
     "_comment": "Verify search functionality with valid input",
-    "searchTerm": "Auto & Transport",
-    "expectedCategory": "Professional"
+    "searchTerm": "Auto & Transport"
   },
   {
     "_comment": "Verify search functionality with partially valid input ",
-    "searchTerm": "Plumber in ABC123",
-    "expectedCategory": "Friend"
+    "searchTerm": "Plumber in ABC123"
   },
   {
     "_comment": "Verify search functionality with partially valid input ",
-    "searchTerm": "Plumber in Matugama",
-    "expectedCategory": "Friend"
+    "searchTerm": "Plumber in Matugama"
   },
   {
     "_comment": "Verify search functionality with partially valid input ",
-    "searchTerm": "Plumbinggggggggggg",
-    "expectedCategory": "Friend"
+    "searchTerm": "Plumbinggggggggggg"
   },
   {
     "_comment": "Verify search functionality with partially valid input ",
-    "searchTerm": "Plumbing$!@#$%%",
-    "expectedCategory": "Friend"
+    "searchTerm": "Plumbing$!@#$%%"
   },
   {
     "_comment": "Verify search functionality with partially valid input ",
-    "searchTerm": "Plumber in col",
-    "expectedCategory": "Friend"
+    "searchTerm": "Plumber in col"
   },
   {
     "_comment": "Verify search functionality with invalid input ",
@@ -132,5 +122,86 @@
   {
     "_comment": "Verify wild card filters functionality on search",
     "searchTerm": "*health?"
+  },
+  {
+    "_comment": "Verify search by main categories working as expected",
+    "searchTerm": "Auto & Transport"
+  },
+  {
+    "_comment": "Verify search by main categories working as expected",
+    "searchTerm": "Design"
+  },
+  {
+    "_comment": "Verify search by main categories working as expected",
+    "searchTerm": "Education"
+  },
+  {
+    "_comment": "Verify search by main categories working as expected",
+    "searchTerm": "Events & Personal Services"
+  },
+  {
+    "_comment": "Verify search by main categories working as expected",
+    "searchTerm": "Friend"
+  },
+  {
+    "_comment": "Verify wild card filters functionality on search",
+    "searchTerm": "Wealth & Welness"
+  },
+  {
+    "_comment": "Verify wild card filters functionality on search",
+    "searchTerm": "Home & Office services"
+  },
+  {
+    "_comment": "Verify wild card filters functionality on search",
+    "searchTerm": "IT & Digital"
+  },
+
+  {
+    "_comment": "Verify search by sub categories working as expected",
+    "searchTerm": "Driver Services"
+  },
+  {
+    "_comment": "Verify search by sub categories working as expected",
+    "searchTerm": "3D Animation"
+  },
+  {
+    "_comment": "Verify search by sub categories working as expected",
+    "searchTerm": "IT/Programming Tutor"
+  },
+  {
+    "_comment": "Verify search by sub categories working as expected",
+    "searchTerm": "Fitness Trainer"
+  },
+  {
+    "_comment": "Verify search by sub categories working as expected",
+    "searchTerm": "Study Buddy"
+  },
+  {
+    "_comment": "Verify search by sub categories working as expected",
+    "searchTerm": "Yoga & Mediation"
+  },
+  {
+    "_comment": "Verify search by sub categories working as expected",
+    "searchTerm": "Ac & Ref *"
+  },
+  {
+    "_comment": "Verify search by sub categories working as expected",
+    "searchTerm": "Web/App Development"
+  },
+  {
+    "_comment": "Verify search by sub categories working as expected",
+    "searchTerm": "Devlopment"
+  },
+  {
+    "_comment": "Verify search by sub categories working as expected",
+    "searchTerm": "Web development"
+  },
+  {
+    "_comment": "Verify search functionality for signed in user",
+    "searchTerm": "Plumbing"
+  },
+  {
+    "_comment": "Verify search functionality for signed in user",
+    "searchTerm": "Plumb*"
   }
 ]
