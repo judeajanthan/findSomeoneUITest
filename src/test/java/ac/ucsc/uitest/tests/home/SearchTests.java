@@ -33,6 +33,34 @@ public class SearchTests extends BaseTest {
         Thread.sleep(7000);
     }
 
+    @Test(description = "TC-002")
+    public void SearchByPlumbingButtonClick() throws InterruptedException {
+        HomePage homePage = basePage.initApp();
+        FindPage findPage = homePage.clickPlumbingSearchButton(FindPage.class);
+        Thread.sleep(7000);
+    }
+
+    @Test(description = "TC-003")
+    public void SearchByElectricalButtonClick() throws InterruptedException {
+        HomePage homePage = basePage.initApp();
+        FindPage findPage = homePage.clickElectricalSearchButton(FindPage.class);
+        Thread.sleep(7000);
+    }
+
+    @Test(description = "TC-004")
+    public void SearchByStudyBuddyButtonClick() throws InterruptedException {
+        HomePage homePage = basePage.initApp();
+        FindPage findPage = homePage.clickStudyBuddySearchButton(FindPage.class);
+        Thread.sleep(7000);
+    }
+
+    @Test(description = "TC-005")
+    public void SearchByMathTutorButtonClick() throws InterruptedException {
+        HomePage homePage = basePage.initApp();
+        FindPage findPage = homePage.clickMathTutorSearchButton(FindPage.class);
+        Thread.sleep(7000);
+    }
+
 
 
 
