@@ -12,9 +12,6 @@ public class SearchTests extends HomeBaseTest {
     @Test(description = "TC-001", dataProvider = "commonDataProvider")
     public void validateUserSearch(SearchData testData) {
 
-        // testData.getTerm() provides "Plumbing", "Math Tutor", etc.
-        // homePage.searchFor(testData.getTerm());
-        // Validation logic...
         System.out.println(testData.toString());
     }
 }
