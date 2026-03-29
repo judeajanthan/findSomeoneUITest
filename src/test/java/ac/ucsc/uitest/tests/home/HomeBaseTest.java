@@ -10,6 +10,6 @@ import org.testng.annotations.BeforeClass;
 public class HomeBaseTest extends BaseTest {
     @BeforeClass
     public void setFilePath() {
-        super.filePath = "src/main/resources/testdata/search_data.json";
+        super.filePath = "src/main/resources/assertiondata/home_data.json";
     }
 }
