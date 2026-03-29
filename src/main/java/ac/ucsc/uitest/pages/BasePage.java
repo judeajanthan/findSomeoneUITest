@@ -21,17 +21,7 @@ import static ac.ucsc.uitest.constants.VariableConstants.EXPLICIT_WAIT_TIME_IN_S
 public class BasePage {
 
     private final String baseURL = "https://test.ineedtofindsomeonefor.com";
-
     protected WebDriver driver;
-    protected BasePage basePage;
-
-
-    public void setupBrowser() {
-        driver = WebDriverManager.chromedriver().create();
-        driver.manage().window().maximize();
-        basePage = PageFactory.initElements(driver, BasePage.class);
-    }
-
 
     public BasePage(WebDriver driver) {
         this.driver = driver;

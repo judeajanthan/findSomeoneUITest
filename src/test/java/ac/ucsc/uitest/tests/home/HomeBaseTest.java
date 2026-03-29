@@ -1,6 +1,6 @@
 package ac.ucsc.uitest.tests.home;
 
-import ac.ucsc.uitest.base.BaseTest;
+import ac.ucsc.uitest.tests.BaseTest;
 import org.testng.annotations.BeforeClass;
 
 /**
