@@ -1,10 +1,9 @@
-package ac.ucsc.uitest.base;
+package ac.ucsc.uitest.tests;
 
 import ac.ucsc.uitest.models.BaseDataModel;
 import ac.ucsc.uitest.models.SearchData;
 import ac.ucsc.uitest.pages.BasePage;
 import ac.ucsc.uitest.utils.BaseReader;
-import ac.ucsc.uitest.utils.BrowserFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -24,6 +23,15 @@ public class BaseTest extends BaseReader {
 
     protected String filePath;
 
+    protected WebDriver driver;
+    protected BasePage basePage;
+
+    @BeforeMethod
+    public void setupBrowser() {
+        driver = WebDriverManager.chromedriver().create();
+        driver.manage().window().maximize();
+        basePage = PageFactory.initElements(driver, BasePage.class);
+    }
 
     @DataProvider(name = "commonDataProvider")
     public Iterator<Object[]> commonDataProvider(Method method) {
