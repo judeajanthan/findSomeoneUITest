@@ -1,6 +1,5 @@
 package ac.ucsc.uitest.pages;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -74,5 +73,11 @@ public class BasePage {
         locatorWaiting(By.xpath("//option[text()='" + text + "']"));
         Select select = new Select(driver.findElement(locator));
         select.selectByVisibleText(text.trim());
+    }
+
+//Expected results common functions
+    public String text(By locator) {
+        locatorWaiting(locator);
+        return driver.findElement(locator).getText().trim();
     }
 }

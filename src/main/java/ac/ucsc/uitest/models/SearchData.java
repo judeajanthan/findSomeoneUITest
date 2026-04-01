@@ -2,6 +2,7 @@ package ac.ucsc.uitest.models;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
  * @author aerok
@@ -10,15 +11,23 @@ import lombok.Setter;
 
 @Setter
 @Getter
+@ToString
 public class SearchData {
     private String searchTerm;
     private String expectedCategory;
 
-    @Override
-    public String toString() {
-        return "SearchData{" +
-                "searchTerm='" + searchTerm + '\'' +
-                ", expectedCategory='" + expectedCategory + '\'' +
-                '}';
-    }
+    //Find
+    private String input;
+    private String expectedNoResultMsg;
+    private String expectedMainCategory;
+    private String expectedSubCategory;
+    private String selectedMainCategory;
+    private String selectedSubCategory;
 }
+//    @Override
+//    public String toString() {
+//        return "SearchData{" +
+//                "searchTerm='" + searchTerm + '\'' +
+//                ", expectedCategory='" + expectedCategory + '\'' +
+//                '}';
+//    }
