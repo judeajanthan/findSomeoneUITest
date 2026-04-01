@@ -1,0 +1,97 @@
+[
+  {
+    "testId": "TC-001",
+    "testData": [
+      {
+        "expectedMainCategory": "Friend",
+        "expectedNoResultMsg": "No results. Try widening your filters."
+      }
+    ]
+  },
+  {
+    "testId": "TC-002",
+    "testData": [
+      {
+        "expectedMainCategory": "Friend",
+        "expectedSubCategory": "Study Buddy",
+        "expectedNoResultMsg": "No results. Try widening your filters."
+      }
+    ]
+  },
+  {
+    "testId": "TC-003",
+    "testData": [
+      {
+        "input": "Colombo",
+        "expectedMainCategory": "Any",
+        "expectedNoResultMsg": "No results. Try widening your filters."
+      },
+      {
+        "input": "Kandy",
+        "expectedMainCategory": "Any",
+        "expectedNoResultMsg": "No results. Try widening your filters."
+      }
+    ]
+  },
+  {
+    "testId": "TC-004",
+    "testData": [
+      {
+        "selectedMainCategory": "Any",
+        "expectedMainCategory": "Any",
+        "expectedNoResultMsg": "No results. Try widening your filters."
+      },
+      {
+        "selectedMainCategory": "Auto & Transport",
+        "expectedMainCategory": "Auto & Transport",
+        "expectedNoResultMsg": "No results. Try widening your filters."
+      },
+      {
+        "selectedMainCategory": "Design",
+        "expectedMainCategory": "Design",
+        "expectedNoResultMsg": "No results. Try widening your filters."
+      },
+      {
+        "selectedMainCategory": "Education",
+        "expectedMainCategory": "Education",
+        "expectedNoResultMsg": "No results. Try widening your filters."
+      },
+      {
+        "selectedMainCategory": "Events & Personal Services",
+        "expectedMainCategory": "Events & Personal Services",
+        "expectedNoResultMsg": "No results. Try widening your filters."
+      },
+      {
+        "selectedMainCategory": "Friend",
+        "expectedMainCategory": "Friend",
+        "expectedNoResultMsg": "No results. Try widening your filters."
+      },
+      {
+        "selectedMainCategory": "Health & Wellness",
+        "expectedMainCategory": "Health & Wellness",
+        "expectedNoResultMsg": "No results. Try widening your filters."
+      },
+      {
+        "selectedMainCategory": "Home & Office Services",
+        "expectedMainCategory": "Home & Office Services",
+        "expectedNoResultMsg": "No results. Try widening your filters."
+      },
+      {
+        "selectedMainCategory": "IT & Digital",
+        "expectedMainCategory": "IT & Digital",
+        "expectedNoResultMsg": "No results. Try widening your filters."
+      }
+    ]
+  },
+  {
+    "testId": "TC-005",
+    "testData": [
+      {
+        "selectedMainCategory": "Auto & Transport",
+        "selectedSubCategory": "Delivery & Moving",
+        "expectedSubCategory": "Delivery & Moving",
+        "expectedNoResultMsg": "No results. Try widening your filters."
+      }
+    ]
+  }
+]
