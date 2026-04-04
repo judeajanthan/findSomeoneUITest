@@ -2,6 +2,7 @@ package ac.ucsc.uitest.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 /**
  * @author aerok
@@ -9,6 +10,10 @@ import org.openqa.selenium.WebDriver;
  */public class HomePage extends BasePage {
 
     private static final By FIND_BUTTON = By.xpath("//a[@href='/search' and text()='Find']");
+
+    private static final By SEARCH_BUTTON = By.xpath("//button[text()='Search']");
+
+    private static final By SEARCH_PLACEHOLDER = By.xpath("//input[@class='input']");
 
     private static final By PLUMBING_SEARCH_BUTTON = By.xpath("//div[@class='cluster']/child::button[text()='Plumbing']");
 
@@ -37,10 +42,8 @@ import org.openqa.selenium.WebDriver;
     }
 
     public void clickBrowseFriendsButton() {
-       click(BROWSE_FRIENDS_BUTTON);
+        click(BROWSE_FRIENDS_BUTTON);
     }
-<<<<<<< Updated upstream
-=======
 
     public <T> T clickSearchButton(Class<T> returnPageType) {
         driver.findElement(SEARCH_BUTTON).click();
@@ -55,9 +58,11 @@ import org.openqa.selenium.WebDriver;
         driver.findElement(BROWSE_PROFESSIONALS_BUTTON).click();
         return PageFactory.initElements(driver, returnPageType);
 
+
     }
     public <T> T clickFindAFriend(Class<T> returnPageType) {
         driver.findElement(BROWSE_FRIENDS_BUTTON).click();
+
         return PageFactory.initElements(driver, returnPageType);
 
     }
@@ -68,5 +73,4 @@ import org.openqa.selenium.WebDriver;
     }
 
 
->>>>>>> Stashed changes
 }
