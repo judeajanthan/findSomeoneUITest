@@ -80,4 +80,23 @@ public class BasePage {
         locatorWaiting(locator);
         return driver.findElement(locator).getText().trim();
     }
+
+    public void uploadFile(By locator, String filePath) {
+        locatorWaiting(locator);
+        driver.findElement(locator).sendKeys(filePath);
+    }
+
+    public String getValue(By locator) {
+        locatorWaiting(locator);
+        return driver.findElement(locator).getAttribute("value");
+    }
+
+    public int countElements(By locator) {
+        locatorWaiting(locator);
+        return driver.findElements(locator).size();
+    }
+
+    public boolean isElementPresent(By locator) {
+        return !driver.findElements(locator).isEmpty();
+    }
 }
