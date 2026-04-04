@@ -48,25 +48,24 @@ public class DBConnectionManager {
     private HikariDataSource createDataSource(DBType dbType) {
         HikariConfig config = new HikariConfig();
 
-        // Note: In a production framework, read credentials from a config/properties file
         switch (dbType) {
             case MYSQL:
-                config.setJdbcUrl("jdbc:mysql://localhost:3306/my_schema");
-                config.setUsername("root");
-                config.setPassword("password");
+                config.setJdbcUrl("jdbc:mysql://144.91.97.34:3307/ineedtofindsomeonefor");
+                config.setUsername("automation_rw_3");
+                config.setPassword("8f2d9b3b6fdf4d90a0f7d29d34d87659");
                 config.setDriverClassName("com.mysql.cj.jdbc.Driver");
                 break;
             case ORACLE:
-                config.setJdbcUrl("jdbc:oracle:thin:@localhost:1521:xe");
-                config.setUsername("admin");
-                config.setPassword("password");
-                config.setDriverClassName("oracle.jdbc.OracleDriver");
+//                config.setJdbcUrl("jdbc:oracle:thin:@localhost:1521:xe");
+//                config.setUsername("admin");
+//                config.setPassword("password");
+//                config.setDriverClassName("oracle.jdbc.OracleDriver");
                 break;
             case POSTGRESQL:
-                config.setJdbcUrl("jdbc:postgresql://localhost:5432/my_schema");
-                config.setUsername("postgres");
-                config.setPassword("password");
-                config.setDriverClassName("org.postgresql.Driver");
+//                config.setJdbcUrl("jdbc:postgresql://localhost:5432/my_schema");
+//                config.setUsername("postgres");
+//                config.setPassword("password");
+//                config.setDriverClassName("org.postgresql.Driver");
                 break;
             default:
                 throw new IllegalArgumentException("Unsupported Database Type: " + dbType);
@@ -84,7 +83,7 @@ public class DBConnectionManager {
 
     /**
      * Call this gracefully shut down all connection pools.
-     * used in @AfterSuite
+     * can be used in @AfterSuite
      */
     public void closeAllPools() {
         dataSources.values().forEach(HikariDataSource::close);

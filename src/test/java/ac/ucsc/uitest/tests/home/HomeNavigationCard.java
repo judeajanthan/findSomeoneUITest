@@ -1,9 +1,10 @@
 package ac.ucsc.uitest.tests.home;
 
-import ac.ucsc.uitest.base.BaseTest;
+//import ac.ucsc.uitest.base.BaseTest;
 import ac.ucsc.uitest.models.SearchData;
 import ac.ucsc.uitest.pages.FindPage;
 import ac.ucsc.uitest.pages.HomePage;
+import ac.ucsc.uitest.tests.BaseTest;
 import org.testng.annotations.Test;
 
 public class HomeNavigationCard extends BaseTest {
