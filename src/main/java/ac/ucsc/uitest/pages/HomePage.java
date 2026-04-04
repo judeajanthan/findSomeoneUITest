@@ -59,6 +59,31 @@ import org.openqa.selenium.support.PageFactory;
     }
 
     public <T> T clickSearchButton(Class<T> returnPageType) {
+        driver.findElement(SEARCH_BUTTON).click();
+        return PageFactory.initElements(driver, returnPageType);
+
+    }
+
+    public void typeSearchText(String searchText) {
+        driver.findElement(SEARCH_PLACEHOLDER).sendKeys(searchText);
+    }
+    public <T> T clickHireAProfessionBtn(Class<T> returnPageType) {
+        driver.findElement(BROWSE_PROFESSIONALS_BUTTON).click();
+        return PageFactory.initElements(driver, returnPageType);
+
+
+    }
+    public <T> T clickFindAFriend(Class<T> returnPageType) {
+        driver.findElement(BROWSE_FRIENDS_BUTTON).click();
+
+        return PageFactory.initElements(driver, returnPageType);
+
+    }
+    public <T> T clickJoinTheNetwork(Class<T> returnPageType) {
+        driver.findElement(CREATE_ACCOUNT_BUTTON).click();
+        return PageFactory.initElements(driver, returnPageType);
+
+    }
         return clickAndReturn(SEARCH_BUTTON, returnPageType);
 
     }
