@@ -20,7 +20,6 @@ import static ac.ucsc.uitest.constants.VariableConstants.EXPLICIT_WAIT_TIME_IN_S
 public class BasePage {
 
     private final String baseURL = "https://test.ineedtofindsomeonefor.com";
-
     protected WebDriver driver;
 
     public BasePage(WebDriver driver) {
@@ -55,6 +54,11 @@ public class BasePage {
         driver.findElement(locator).click();
     }
 
+    public <T> T clickAndReturn(By locator, Class<T> returnPageType) {
+        click(locator);
+        return PageFactory.initElements(driver, returnPageType);
+    }
+
     public void mouseHover(By locator) {
         new Actions(driver).moveToElement(driver.findElement(locator));
     }
@@ -65,9 +69,15 @@ public class BasePage {
         driver.findElement(locator).sendKeys(text);
     }
 
-    public void Selector(By locator, String text) {
+    public void selector(By locator, String text) {
         locatorWaiting(By.xpath("//option[text()='" + text + "']"));
         Select select = new Select(driver.findElement(locator));
         select.selectByVisibleText(text.trim());
+    }
+
+//Expected results common functions
+    public String text(By locator) {
+        locatorWaiting(locator);
+        return driver.findElement(locator).getText().trim();
     }
 }

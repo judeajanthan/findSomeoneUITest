@@ -3,6 +3,8 @@ package ac.ucsc.uitest.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.List;
+
 public class FindPage extends BasePage {
 
     private String mainCategorySelectorVisibleText;
@@ -52,6 +54,10 @@ public class FindPage extends BasePage {
 
     private static final By SEND_MESSAGE_BUTTON = By.xpath("//div[@class='cluster right mt-4']//button[text()='Send message']");
 
+    private static final By NO_RESULTS_MESSAGE = By.xpath("//div[@class='card']");
+
+    private static final By RESULTS_CARD = By.xpath("//div[@class='card stack-sm']");
+
     public FindPage(WebDriver driver) {
         super(driver);
     }
@@ -69,12 +75,12 @@ public class FindPage extends BasePage {
     }
 
     public void selectMainCategory(String visibleText) {
-        Selector(MAIN_CATEGORY_SELECTOR, visibleText);
+        selector(MAIN_CATEGORY_SELECTOR, visibleText);
         this.mainCategorySelectorVisibleText = visibleText;
     }
 
     public void selectSubCategory(String visibleText) {
-        Selector(SUB_CATEGORY_SELECTOR, visibleText);
+        selector(SUB_CATEGORY_SELECTOR, visibleText);
         this.subCategorySelectorVisibleText = visibleText;
     }
 
@@ -111,7 +117,7 @@ public class FindPage extends BasePage {
     }
 
     public void clickPreferredCurrencySelector(String visibleText) {
-        Selector(PREFERRED_CURRENCY_SELECTOR, visibleText);
+        selector(PREFERRED_CURRENCY_SELECTOR, visibleText);
         this.preferredCurrencySelectorVisibleText = visibleText;
     }
 
@@ -124,7 +130,7 @@ public class FindPage extends BasePage {
     }
 
     public void clickPurposeSelector(String visibleText) {
-        Selector(PURPOSE_SELECTOR, visibleText);
+        selector(PURPOSE_SELECTOR, visibleText);
         this.purposeSelectorVisibleText = visibleText;
     }
 
@@ -142,5 +148,26 @@ public class FindPage extends BasePage {
 
     public void clickSendMessageButton() {
         click(SEND_MESSAGE_BUTTON);
+    }
+
+//Expected results functions of find page
+    public boolean validateCardDisplayed() {
+        return !driver.findElements(RESULTS_CARD).isEmpty();
+    }
+
+    public int getCardCount(){
+        return driver.findElements(RESULTS_CARD).size();
+    }
+
+    public String validateMainCategoryDisplayed() {
+        return driver.findElements(MAIN_CATEGORY_SELECTOR).get(0).getText();
+    }
+
+    public String validateSubCategoryDisplayed() {
+        return driver.findElements(SUB_CATEGORY_SELECTOR).get(0).getText();
+    }
+
+    public String validateNoResultsMessage(){
+        return text(NO_RESULTS_MESSAGE);
     }
 }

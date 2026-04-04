@@ -39,8 +39,8 @@ Before you push anything, always pull from the dev branch.
 
 #### Example steps
 
-* git checkout dev
-* git pull origin dev
+* git checkout master
+* git pull origin master
 * git checkout -b refactor/replace-data-provider
 * git add .
 * git commit -m "refactor: DataProvider classes moved to the respective tests/packages"

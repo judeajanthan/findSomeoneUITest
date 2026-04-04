@@ -1,14 +1,14 @@
 package ac.ucsc.uitest.tests.find;
 
-import ac.ucsc.uitest.base.BaseTest;
-import ac.ucsc.uitest.models.FindData;
-import ac.ucsc.uitest.pages.FindPage;
+import ac.ucsc.uitest.models.SearchData;
 import ac.ucsc.uitest.pages.HomePage;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import ac.ucsc.uitest.pages.FindPage;
 
-public class FindTest extends BaseTest {
+public class FindTest extends FindBaseTest {
 
     private FindPage findPage;
 
@@ -19,21 +19,81 @@ public class FindTest extends BaseTest {
         findPage = PageFactory.initElements(driver, FindPage.class);
     }
 
-    @Test
-    public void clickFindAFriendBtn() {
+    @Test(description = "TC-001", dataProvider = "commonDataProvider")
+    public void findByFindAFriendBtn(SearchData testData) throws InterruptedException {
         findPage.clickFindAFriendButton();
+        Thread.sleep(3000);
+        if (findPage.validateCardDisplayed()) {
+            Assert.assertTrue(findPage.getCardCount() > 0);
+            System.out.println(findPage.getCardCount());
+//            Assert.assertEquals(findPage.validateMainCategoryDisplayed(), testData.getExpectedMainCategory());
+//            System.out.println(findPage.validateMainCategoryDisplayed());
+        } else {
+            Assert.assertEquals(findPage.validateNoResultsMessage(), testData.getExpectedNoResultMsg());
+            System.out.println(findPage.validateNoResultsMessage());
+        }
     }
 
-    @Test (dataProvider = "locationData", dataProviderClass = FindDataProvider.class)
-    public void insertLocation(FindData locationInput) {
-        findPage.locationInputField(locationInput.getLocationInput());
-        System.out.println(locationInput);
+    @Test(description = "TC-002", dataProvider = "commonDataProvider")
+    public void findByStudyBuddyBtn(SearchData testData) throws InterruptedException {
+        findPage.clickStudyBuddyButton();
+        Thread.sleep(3000);
+        if (findPage.validateCardDisplayed()) {
+            Assert.assertTrue(findPage.getCardCount() > 0);
+            System.out.println(findPage.getCardCount());
+//            Assert.assertEquals(findPage.validateMainCategoryDisplayed(), testData.getExpectedMainCategory());
+//            System.out.println(findPage.validateMainCategoryDisplayed());
+//            Assert.assertEquals(findPage.validateSubCategoryDisplayed(), testData.getExpectedSubCategory());
+//            System.out.println(findPage.validateSubCategoryDisplayed());
+        } else {
+            Assert.assertEquals(findPage.validateNoResultsMessage(), testData.getExpectedNoResultMsg());
+            System.out.println(findPage.validateNoResultsMessage());
+        }
     }
 
-    @Test (dataProvider = "mainCategoryData", dataProviderClass = FindDataProvider.class)
-    public void selectMainCat(FindData MainCategory) {
+    @Test(description = "TC-003", dataProvider = "commonDataProvider")
+    public void findByLocation(SearchData testData) throws InterruptedException {
+        findPage.locationInputField(testData.getInput());
+        Thread.sleep(3000);
+        if (findPage.validateCardDisplayed()) {
+            Assert.assertTrue(findPage.getCardCount() > 0);
+            System.out.println(findPage.getCardCount());
+        } else {
+            Assert.assertEquals(findPage.validateNoResultsMessage(), testData.getExpectedNoResultMsg());
+            System.out.println(findPage.validateNoResultsMessage());
+        }
+    }
 
-        findPage.selectMainCategory(MainCategory.getMainCategorySelect());
-        System.out.println(MainCategory);
+    @Test(description = "TC-004", dataProvider = "commonDataProvider")
+    public void findByMainCat(SearchData testData) throws InterruptedException {
+        findPage.selectMainCategory(testData.getSelectedMainCategory());
+        Thread.sleep(3000);
+        if (findPage.validateCardDisplayed()) {
+            Assert.assertTrue(findPage.getCardCount() > 0);
+            System.out.println(findPage.getCardCount());
+//            Assert.assertEquals(findPage.validateMainCategoryDisplayed(), testData.getExpectedMainCategory());
+//            System.out.println(findPage.validateMainCategoryDisplayed());
+        } else {
+            Assert.assertEquals(findPage.validateNoResultsMessage(), testData.getExpectedNoResultMsg());
+            System.out.println(findPage.validateNoResultsMessage());
+        }
+    }
+
+    @Test(description = "TC-005", dataProvider = "commonDataProvider")
+    public void findBySubCat(SearchData testData) throws InterruptedException {
+        //precondition
+        findPage.scrollByPixels(0, 250);
+        findPage.selectMainCategory(testData.getSelectedMainCategory());
+        findPage.selectSubCategory(testData.getSelectedSubCategory());
+        Thread.sleep(3000);
+        if (findPage.validateCardDisplayed()) {
+            Assert.assertTrue(findPage.getCardCount() > 0);
+            System.out.println(findPage.getCardCount());
+//            Assert.assertEquals(findPage.validateSubCategoryDisplayed(), testData.getExpectedSubCategory());
+//            System.out.println(findPage.validateSubCategoryDisplayed());
+        } else {
+            Assert.assertEquals(findPage.validateNoResultsMessage(), testData.getExpectedNoResultMsg());
+            System.out.println(findPage.validateNoResultsMessage());
+        }
     }
 }
