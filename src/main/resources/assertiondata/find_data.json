@@ -3,7 +3,7 @@
     "testId": "TC-001",
     "testData": [
       {
-        "expectedMainCategory": "Friend",
+        "input": "Colombo",
         "expectedNoResultMsg": "No results. Try widening your filters."
       }
     ]
@@ -13,13 +13,22 @@
     "testData": [
       {
         "expectedMainCategory": "Friend",
-        "expectedSubCategory": "Study Buddy",
         "expectedNoResultMsg": "No results. Try widening your filters."
       }
     ]
   },
   {
     "testId": "TC-003",
+    "testData": [
+      {
+        "expectedMainCategory": "Friend",
+        "expectedSubCategory": "Study Buddy",
+        "expectedNoResultMsg": "No results. Try widening your filters."
+      }
+    ]
+  },
+  {
+    "testId": "TC-004",
     "testData": [
       {
         "input": "Colombo",
@@ -34,7 +43,7 @@
     ]
   },
   {
-    "testId": "TC-004",
+    "testId": "TC-005",
     "testData": [
       {
         "selectedMainCategory": "Any",
@@ -84,7 +93,7 @@
     ]
   },
   {
-    "testId": "TC-005",
+    "testId": "TC-006",
     "testData": [
       {
         "selectedMainCategory": "Auto & Transport",
