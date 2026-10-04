@@ -50,23 +50,36 @@ public class DBConnectionManager {
 
         switch (dbType) {
             case MYSQL:
-                config.setJdbcUrl("jdbc:mysql://144.91.97.34:3307/ineedtofindsomeonefor");
-                config.setUsername("automation_rw_3");
-                config.setPassword("8f2d9b3b6fdf4d90a0f7d29d34d87659");
-                config.setDriverClassName("com.mysql.cj.jdbc.Driver");
-                break;
-            case ORACLE:
-//                config.setJdbcUrl("jdbc:oracle:thin:@localhost:1521:xe");
-//                config.setUsername("admin");
-//                config.setPassword("password");
+//                String dbUrl = System.getenv("FIND_SOMEONE_DB_URL");
+//                String dbUsername = System.getenv("FIND_SOMEONE_DB_USERNAME");
+//                String dbPassword = System.getenv("FIND_SOMEONE_DB_PASSWORD");
+//
+//                if (dbUrl == null || dbUsername == null || dbPassword == null) {
+//                    throw new IllegalStateException(
+//                            "Database environment variables are not configured. " +
+//                                    "Please set FIND_SOMEONE_DB_URL, FIND_SOMEONE_DB_USERNAME, " +
+//                                    "and FIND_SOMEONE_DB_PASSWORD."
+//                    );
+//                }
+//
+//                config.setJdbcUrl(dbUrl);
+//                config.setUsername(dbUsername);
+//                config.setPassword(dbPassword);
+//                config.setDriverClassName("com.mysql.cj.jdbc.Driver");
+//                break;
+//            case ORACLE:
+//                config.setJdbcUrl(System.getenv("FIND_SOMEONE_ORACLE_DB_URL"));
+//                config.setUsername(System.getenv("FIND_SOMEONE_ORACLE_DB_USERNAME"));
+//                config.setPassword(System.getenv("FIND_SOMEONE_ORACLE_DB_PASSWORD"));
 //                config.setDriverClassName("oracle.jdbc.OracleDriver");
-                break;
-            case POSTGRESQL:
-//                config.setJdbcUrl("jdbc:postgresql://localhost:5432/my_schema");
-//                config.setUsername("postgres");
-//                config.setPassword("password");
+//                break;
+//
+//            case POSTGRESQL:
+//                config.setJdbcUrl(System.getenv("FIND_SOMEONE_POSTGRES_DB_URL"));
+//                config.setUsername(System.getenv("FIND_SOMEONE_POSTGRES_DB_USERNAME"));
+//                config.setPassword(System.getenv("FIND_SOMEONE_POSTGRES_DB_PASSWORD"));
 //                config.setDriverClassName("org.postgresql.Driver");
-                break;
+//                break;
             default:
                 throw new IllegalArgumentException("Unsupported Database Type: " + dbType);
         }
