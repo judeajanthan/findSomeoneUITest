@@ -16,8 +16,8 @@ public class HomePage extends BasePage {
     private static final By ELECTRICAL_SEARCH_BUTTON = By.xpath("//div[@class='cluster']/child::button[text()='Electrical']");
     private static final By MATH_TUTOR_SEARCH_BUTTON = By.xpath("//div[@class='cluster']/child::button[text()='Math Tutor']");
     private static final By STUDY_BUDDY_SEARCH_BUTTON = By.xpath("//div[@class='cluster']/child::button[text()='Study Buddy']");
-    private static final By BROWSE_PROFESSIONALS_BUTTON = By.xpath("//a[@aria-label='Browse professionals']");
-    private static final By BROWSE_FRIENDS_BUTTON = By.xpath("//a[@aria-label='Browse friends']");
+    private static final By BROWSE_PROFESSIONALS_BUTTON = By.xpath("//a[@href='/search?q=Plumbing' and contains(., 'Browse professionals')]");
+    private static final By BROWSE_FRIENDS_BUTTON = By.xpath("//a[@href='/search?q=Study Buddy' and contains(., 'Browse friends')]");
     private static final By CREATE_ACCOUNT_BUTTON = By.xpath("//a[text()='Create account']");
     private static final By JOIN_BUTTON = By.xpath("//div[@class='header-bottom']/descendant::a[text()='Join']");
     private static final By SIGN_IN_BUTTON = By.xpath("//div[@class='header-bottom']/descendant::a[text()='Sign in']");
