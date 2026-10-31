@@ -2,15 +2,13 @@ package ac.ucsc.uitest.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
-import java.util.List;
+import org.openqa.selenium.support.ui.Select;
+import java.time.Duration;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FindPage extends BasePage {
-
-    private String mainCategorySelectorVisibleText;
-    private String subCategorySelectorVisibleText;
-    private String preferredCurrencySelectorVisibleText;
-    private String purposeSelectorVisibleText;
 
     private static final By FIND_A_FRIEND_BUTTON = By.xpath("//div[@class='intent-chips']//button[text()='Find a Friend']");
 
@@ -54,12 +52,16 @@ public class FindPage extends BasePage {
 
     private static final By SEND_MESSAGE_BUTTON = By.xpath("//div[@class='cluster right mt-4']//button[text()='Send message']");
 
-    private static final By NO_RESULTS_MESSAGE = By.xpath("//div[@class='card']");
+    private static final By NO_RESULTS_MESSAGE = By.xpath("//div[@class='card' and normalize-space()='No results. Try widening your filters.']");
 
     private static final By RESULTS_CARD = By.xpath("//div[@class='card stack-sm']");
 
     public FindPage(WebDriver driver) {
         super(driver);
+    }
+
+    public void waitForSearchOutcome() {
+        waitForVisibleOutcome(RESULTS_CARD, NO_RESULTS_MESSAGE);
     }
 
     public void clickFindAFriendButton() {
@@ -75,13 +77,42 @@ public class FindPage extends BasePage {
     }
 
     public void selectMainCategory(String visibleText) {
-        selector(MAIN_CATEGORY_SELECTOR, visibleText);
-        this.mainCategorySelectorVisibleText = visibleText;
+        WebDriverWait wait = new WebDriverWait(
+                driver,
+                Duration.ofSeconds(10)
+        );
+
+        wait.until(d -> {
+            try {
+                Select select = new Select(
+                        d.findElement(MAIN_CATEGORY_SELECTOR)
+                );
+
+                boolean optionExists = select.getOptions().stream()
+                        .anyMatch(option ->
+                                option.getText().trim()
+                                        .equals(visibleText.trim())
+                        );
+
+                if (!optionExists) {
+                    return false;
+                }
+
+                // Select using the freshly located dropdown.
+                select.selectByVisibleText(visibleText.trim());
+
+                return true;
+
+            } catch (NoSuchElementException |
+                     StaleElementReferenceException e) {
+                // Retry if the dropdown or its options change.
+                return false;
+            }
+        });
     }
 
     public void selectSubCategory(String visibleText) {
         selector(SUB_CATEGORY_SELECTOR, visibleText);
-        this.subCategorySelectorVisibleText = visibleText;
     }
 
     public void clickMinRatingInputField(String text) {
@@ -118,7 +149,6 @@ public class FindPage extends BasePage {
 
     public void clickPreferredCurrencySelector(String visibleText) {
         selector(PREFERRED_CURRENCY_SELECTOR, visibleText);
-        this.preferredCurrencySelectorVisibleText = visibleText;
     }
 
     public void clickMessageButton() {
@@ -131,7 +161,6 @@ public class FindPage extends BasePage {
 
     public void clickPurposeSelector(String visibleText) {
         selector(PURPOSE_SELECTOR, visibleText);
-        this.purposeSelectorVisibleText = visibleText;
     }
 
     public void clickServiceInputField(String text) {
@@ -150,24 +179,39 @@ public class FindPage extends BasePage {
         click(SEND_MESSAGE_BUTTON);
     }
 
-//Expected results functions of find page
+    // Expected result functions
+
     public boolean validateCardDisplayed() {
         return !driver.findElements(RESULTS_CARD).isEmpty();
     }
 
-    public int getCardCount(){
+    public int getCardCount() {
         return driver.findElements(RESULTS_CARD).size();
     }
 
     public String validateMainCategoryDisplayed() {
-        return driver.findElements(MAIN_CATEGORY_SELECTOR).get(0).getText();
+        return new Select(
+                driver.findElement(MAIN_CATEGORY_SELECTOR)
+        ).getFirstSelectedOption().getText().trim();
     }
 
     public String validateSubCategoryDisplayed() {
-        return driver.findElements(SUB_CATEGORY_SELECTOR).get(0).getText();
+        return new Select(
+                driver.findElement(SUB_CATEGORY_SELECTOR)
+        ).getFirstSelectedOption().getText().trim();
     }
 
-    public String validateNoResultsMessage(){
+    public String validatePreferredCurrencyDisplayed() {
+        return new Select(
+                driver.findElement(PREFERRED_CURRENCY_SELECTOR)
+        ).getFirstSelectedOption().getText().trim();
+    }
+
+    public String validateNoResultsMessage() {
         return text(NO_RESULTS_MESSAGE);
+    }
+
+    public void waitForNoResultsMessage() {
+        locatorWaiting(NO_RESULTS_MESSAGE);
     }
 }
