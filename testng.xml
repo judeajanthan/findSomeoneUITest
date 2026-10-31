@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-    <suite name="All Test Suite" thread-count="2" parallel="classes">
-         <test verbose="2"  preserve-order="false" name="C:/Users/judea/OneDrive/Desktop/findSomeoneUITest">
-             <classes>
-                 <class name="ac.ucsc.uitest.tests.home.HomeTest">
-                     <methods>
-                         <include name="clickFindBtn"/>
-                         <include name="clickBrowseProfessionalsBtn"/>
-                         <include name="clickBrowseFriendsBtn"/>
-                     </methods>
-                 </class>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-                 <class name="ac.ucsc.uitest.tests.home.SearchTests">
-                     <methods>
-                         <include name="validateUserSearch"/>
-                     </methods>
-                 </class>
-             </classes>
-         </test>
-    </suite>
+<suite name="FindSomeone UI Test Suite"
+       parallel="classes"
+       thread-count="2">
+
+    <test name="UI Tests" preserve-order="true">
+        <classes>
+            <class name="ac.ucsc.uitest.tests.home.HomeTest">
+                <methods>
+                    <include name="clickFindBtn"/>
+                    <include name="clickBrowseProfessionalsBtn"/>
+                    <include name="clickBrowseFriendsBtn"/>
+                </methods>
+            </class>
+
+            <class name="ac.ucsc.uitest.tests.home.SearchTests">
+                <methods>
+                    <include name="validateUserSearch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
